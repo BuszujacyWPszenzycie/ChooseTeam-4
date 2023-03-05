@@ -1,0 +1,145 @@
+@use 'colors' as *;
+@use 'mixin' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	color: $font-color;
+	font-size: 1.6rem;
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: $light-gray;
+}
+
+.btn {
+	@include mixinBtn;
+}
+
+.main {
+	position: relative;
+	width: 1500px;
+	height: 900px;
+	background-color: $grey;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 17px 53px -9px rgba(66, 68, 90, 0.4);
+	&__title {
+		padding-top: 1rem;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 3rem;
+	}
+}
+
+.team {
+	&__box {
+		width: 1400px;
+		height: 250px;
+		background-color: $light-green;
+		border-radius: 8px;
+		padding: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+	&__player {
+		background-color: $orange;
+		height: 160px;
+		width: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border-radius: 8px;
+		border: 1px solid $font-color;
+		margin-right: 1rem;
+
+		&-img {
+			width: 80px;
+			border-radius: 8px;
+			padding-bottom: 0.5rem;
+		}
+
+		&-icon {
+			font-size: 3rem;
+			padding-bottom: 2rem;
+		}
+
+		&-name {
+			text-transform: uppercase;
+		}
+	}
+}
+
+.second__box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1400px;
+	.pitch {
+		&__box {
+			border-radius: 8px;
+			height: 450px;
+			background-color: $light-green;
+			width: 1000px;
+			margin-right: 2rem;
+		}
+	}
+
+	.button {
+		&__box {
+			height: 450px;
+			background-color: $light-green;
+			width: 300px;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+}
+
+.popup {
+	display: none;
+	border-radius: 8px;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background-color: $light-gray;
+	border: 1px solid $font-color;
+
+	&__title {
+		margin-bottom: 3rem;
+	}
+
+	&__input {
+		margin-bottom: 3rem;
+		color: $light-font-color;
+	}
+}
+
+.active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
