@@ -74,8 +74,11 @@ body {
 
 		&-img {
 			width: 80px;
+			height: 100px;
 			border-radius: 8px;
 			padding-bottom: 0.5rem;
+			background-position: center;
+			background-size: cover;
 		}
 
 		&-icon {
@@ -122,16 +125,31 @@ body {
 	display: none;
 	border-radius: 8px;
 	position: absolute;
-	width: 300px;
-	height: 300px;
+	width: 500px;
+	height: 500px;
 	background-color: $light-gray;
 	border: 1px solid $font-color;
 
 	&__title {
 		margin-bottom: 3rem;
+		text-transform: uppercase;
+		font-weight: bold;
 	}
 
 	&__input {
+		margin-bottom: 3rem;
+		color: $light-font-color;
+		width: 250px;
+		height: 50px;
+		font-size: 1.5rem;
+		padding: 0.5rem;
+	}
+
+	&__select {
+		width: 250px;
+		height: 50px;
+		font-size: 1.5rem;
+		padding: 0.5rem;
 		margin-bottom: 3rem;
 		color: $light-font-color;
 	}
@@ -142,4 +160,18 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.picture {
+	width: 1000px;
+	height: 1000px;
+	border: 1px solid black;
+	background-position: center;
+	background-size: cover;
+}
+
+.test_div {
+	// width: 80px;
+	background-position: center;
+	background-size: cover;
 }
