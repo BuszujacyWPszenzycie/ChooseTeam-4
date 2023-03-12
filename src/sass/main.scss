@@ -102,8 +102,30 @@ body {
 			border-radius: 8px;
 			height: 450px;
 			background-color: $light-green;
-			width: 1000px;
+			width: 750px;
 			margin-right: 2rem;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		&__field {
+			width: 250px;
+			&-title {
+				height: 50px;
+				// background-color: aqua;
+				padding: 1rem;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			&-draggable {
+				height: 150px;
+				// background-color: beige;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 	}
 
@@ -117,6 +139,22 @@ body {
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+		}
+	}
+
+	.delete {
+		&__box {
+			width: 200px;
+			background-color: $light-green;
+			height: 450px;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			&-icon {
+				font-size: 4rem;
+			}
 		}
 	}
 }

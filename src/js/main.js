@@ -11,6 +11,23 @@ const selectImage = document.querySelector('.popup__select')
 const pictureBackground = document.querySelector('.picture')
 let uploadedImage = ''
 const btnRun = document.querySelector('.btn__run')
+const deleteBox = document.querySelector('.delete__box')
+const allDragablePitchFields = document.querySelectorAll('.pitch__field-draggable')
+
+allPlayers.forEach(player => {
+	player.addEventListener('dragstart', () => {
+		player.classList.add('is-dragged')
+	})
+	player.addEventListener('dragend', () => {
+		player.classList.remove('is-dragged')
+	})
+})
+
+deleteBox.addEventListener('dragover', e => {
+	e.preventDefault()
+	const isDragged = document.querySelector('.is-dragged')
+	isDragged.remove()
+})
 
 const removeLastPlayer = () => {
 	const teamBox = document.querySelector('.team__box')
@@ -21,6 +38,16 @@ const addFunction = () => {
 	popup.classList.add('active')
 	mainWrapper.style.opacity = '0.4'
 }
+
+allDragablePitchFields.forEach(field => {
+	field.addEventListener('dragover', e => {
+		e.preventDefault()
+		if (field.childElementCount < 1) {
+			const isDragged = document.querySelector('.is-dragged')
+			field.appendChild(isDragged)
+		}
+	})
+})
 
 // const addPlayer2 = () => {
 // 	let newPlayerDiv = document.createElement('div')
@@ -81,8 +108,19 @@ const addPlayer = () => {
 
 	newPlayerDiv.appendChild(newPlayerIcon)
 	newPlayerDiv.appendChild(newPlayerName)
+	newPlayerDiv.setAttribute('draggable', true)
 
 	teamBox.appendChild(newPlayerDiv)
+	const allPlayers = document.querySelectorAll('.team__player')
+
+	allPlayers.forEach(player => {
+		player.addEventListener('dragstart', () => {
+			player.classList.add('is-dragged')
+		})
+		player.addEventListener('dragend', () => {
+			player.classList.remove('is-dragged')
+		})
+	})
 
 	console.log(inputPopup)
 }
